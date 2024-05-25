@@ -142,6 +142,36 @@ export class TableComponent implements OnInit {
       phone: 33333,
       email: 'suplayer@yahoo.com',
     },
+    {
+      name: 'Suplayer 20',
+      adress: 'Adress1',
+      phone: 33333,
+      email: 'suplayer@yahoo.com',
+    },
+    {
+      name: 'Suplayer 21',
+      adress: 'Adress1',
+      phone: 33333,
+      email: 'suplayer@yahoo.com',
+    },
+    {
+      name: 'Suplayer 22',
+      adress: 'Adress1',
+      phone: 33333,
+      email: 'suplayer@yahoo.com',
+    },
+    {
+      name: 'Suplayer 21',
+      adress: 'Adress1',
+      phone: 33333,
+      email: 'suplayer@yahoo.com',
+    },
+    {
+      name: 'Suplayer 22',
+      adress: 'Adress1',
+      phone: 33333,
+      email: 'suplayer@yahoo.com',
+    },
   ];
   currentPage: number = 1;
   pageSize: number = 5;
@@ -165,8 +195,11 @@ export class TableComponent implements OnInit {
     }
   }
   next() {
-    this.currentPage++;
-    this.visibleData();
+    if (this.currentPage !== this.pageNumber().length) {
+      this.currentPage++;
+      this.visibleData();
+    }
+    
   }
 
   pageNumber() {
