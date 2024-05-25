@@ -1,0 +1,38 @@
+<p>table works!</p>
+<div class="w-4/4 shadow-md p-10 bg-white sgadow-blue-200/20 mx-36 my-10">
+<div class="flex justify-between items-center mb-4 mt -4">
+    <input type="text" placeholder="search" class="w-full border p-2 rounded-lg" #filter (keyup)="filterData(filter.value)">
+    <select class="border p-2 rounded-lg"  #pageSize (change)="changePageSize(pageSize.value)">
+        <option [value]="size" *ngFor="let size of pageSizes">{{size}}</option>
+    </select>
+</div>
+<table class="w-full border">
+    <thead>
+        <tr>
+            <th class="p-3 text-left bg-gray-200">#</th>
+            <th class="p-3 text-left bg-gray-200">Suplier</th>
+            <th class="p-3 text-left bg-gray-200">adress</th>
+            <th class="p-3 text-left bg-gray-200">Email</th>
+          <th class="p-3 text-left bg-gray-200">Phone</th>
+          <th class="p-3 text-left bg-gray-200">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr class="border-2" *ngFor="let s of visibleData() ;let i=index">
+    <td>{{i+1}}</td>
+    <td class="p-3 border-2">{{s.name}}</td>
+    <td class="p-3 border-2">{{s.adress}}</td>
+    <td class="p-3 border-2">{{s.email}}</td>
+    <td class="p-3 border-2">{{s.phone}}</td>
+    <td class="p-3 border-2"></td>
+</tr>
+    </tbody>
+</table>
+<div class="mt-4 flex items-center justify-center">
+    <button class="text-cyan-500 border-4 py-2 px-4 rounded-l-lg cursor-pointer mr-5" (click)="previous()">Previous</button>
+    <button [class.bg-blue-500]="i+1 === currentPage" 
+    [class.text-white]="i+1 === currentPage"  
+    *ngFor="let c of pageNumber() ;let i=index" class="text-cyan-500 border-4 py-2 px-4 rounded-l-lg cursor-pointer mr-5" (click)="getCurrent(i+1)">{{i+1}}</button>
+    <button class="text-cyan-500 border-4 py-2 px-4 rounded-l-lg cursor-pointer mr-5" (click)="next()">Next</button>
+</div>
+</div>

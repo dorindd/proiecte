@@ -1,0 +1,68 @@
+<p>onlydoc works!</p>
+<h1>Appoitmet to be checked by Doc <b style="color:black">{{printName |uppercase}}</b></h1>
+
+<ng-container class="noapp">
+  <h1>{{userAppoiments.length >0?'Check your appoiments':'No Appoiments'}}</h1>
+</ng-container>
+
+<select (change)="select($event)">
+  <option value="">Select</option>
+  <option [value]="o" *ngFor="let o of allselect">{{ o }}</option>
+</select>
+<div class="btn">
+  <button (click)="back()">Back to Homepage</button>
+</div>
+
+<ng-container *ngIf="myselect === 'all'">
+  <div class="container">
+    <div class="box" *ngFor="let u of userAppoiments">
+      <p>
+        <b
+          >Detailes for {{ u.name |uppercase}}
+          <button class="btnbtn" *ngIf="u.done " (click)="delete(u)">
+            X
+          </button></b
+        >
+      </p>
+      <p>Appoitment scheduled for {{ u.time }}</p>
+      <p>Date: {{ u.date }}</p>
+      <p>First Time: {{ u.first }}</p>
+      <p>Gender: {{ u.gender }}</p>
+      <p>Age: {{ u.age }}</p>
+      <p>Mobile nr: {{ u.mobile }}</p>
+      <p>City: {{ u.city }}</p>
+      <p>Notes for doctor : {{ u.note }}</p>
+      <button (click)="checked(u.id)" class="btn-btn"[disabled]="u.done">
+        {{ u.done ? "&#10004;" : "Done" }}
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="myselect === 'Current date'">
+  <div class="container">
+    <div class="box" *ngFor="let u of currentAppoitment">
+      <p>
+        <b
+          >Detailes for : {{ u.id }}:{{ u.name }}
+          <button class="btnbtn" *ngIf="u.done === true" (click)="delete(u)">
+            X
+          </button></b
+        >
+      </p>
+      <p>Appoitment scheduled for :{{ u.time }}</p>
+      <p>Date :{{ u.date }}</p>
+      <p>First Time:{{ u.first }}</p>
+      <p>Gender:{{ u.gender }}</p>
+      <p>Age:{{ u.age }}</p>
+      <p>Mobile nr: {{ u.mobile }}</p>
+      <p>City: {{ u.city }}</p>
+      <p>Notes for doctor: {{ u.note }}</p>
+      <button (click)="checked(u.id)" class="btn-btn" [disabled]="u.done">
+        {{ u.done ? "&#10004;" : "Done" }}
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+<div class="footer"></div>

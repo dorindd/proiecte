@@ -1,0 +1,151 @@
+.container {
+  width: 100%;
+  position: relative;
+  top: 40px;
+  display: flex;
+  background-color: cornsilk;
+  border-radius: 60px;
+  height: 600px;
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .box {
+    width:600px;
+    height: auto;
+    margin:10px ;
+    .form{
+      position: relative;
+      top:70px;
+    }
+    .docimg{
+      position: relative;
+      width: 330px;
+      height: 350px;
+    }
+    .btndoc{
+      position: relative;
+    top: 30px;
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    background:red;
+    color:white;
+    font-weight:500;
+    border-radius: 10px;
+    }
+  }
+ 
+  .details {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  label {
+    font-weight: 700;
+  }
+  .notelab {
+    position: relative;
+    top: 50px;
+    left:5px;
+  }
+  .btnbtn {
+    position: relative;
+    top: 30px;
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    background: green;
+    color: azure;
+    border-radius: 10px;
+  }
+  .mybtn {
+    position: relative;
+    top: 1px;
+    background-color: blue;
+  }
+  img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+  }
+
+  .line {
+    position: relative;
+    margin: 0 auto;
+    width: 190px;
+    border: 3px solid black;
+  }
+  textarea {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .gender {
+    position: relative;
+    right: 30px;
+  }
+  .txt {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    top: 10px;
+    width: 53%;
+    font-weight: 600;
+  }
+  .active{
+    background-color: red;
+    color:black;
+  }
+}
+.mymodal{
+  position: relative;
+  top:200px;
+  display: block;
+  margin:0 auto;
+  width:400px;
+  height:300px;
+  border:1px solid white;
+  background-color: blue;
+
+  input[type='text'],[type='password']{
+    position: relative;
+    top:60px;
+    display: block;
+    margin:0 auto;
+    
+  }
+  .btnlog{
+    position: relative;
+    top:70px;
+    display: block;
+    margin:0 auto;
+  }
+}
+.footer{
+  position:absolute ;
+  bottom:0px;
+  background-color:blue ;
+  width:100%;
+  height:100px;
+  .txt{
+    text-align: center;
+    color:white;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: oblique;
+  }
+  .btnreg{
+    position: relative;
+    display: block;
+    margin:0 auto;
+  width:150px;
+  color:black;
+  font-weight: 900;
+  border-radius:5px ;
+  }
+}

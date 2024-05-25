@@ -1,0 +1,30 @@
+.mymodal{
+    position: relative;
+    top:200px;
+    display: block;
+    margin:0 auto;
+    width:400px;
+    height:300px;
+    border:1px solid white;
+    background-color: blue;
+  
+    input[type='text'],[type='password']{
+      position: relative;
+      top:60px;
+      display: block;
+      margin:0 auto;
+      
+    }
+    .btnlog{
+      position: relative;
+      top:80px;
+      display: block;
+      margin:0 auto;
+    }
+    .btnback{
+      position: relative;
+      top:90px;
+      display: block;
+      margin:0 auto;
+    }
+  }

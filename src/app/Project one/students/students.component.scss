@@ -1,0 +1,94 @@
+h4 {
+  color: white;
+
+}
+.mycont{
+    position: relative;
+    margin:0 auto;
+    width: 98%;
+    height:auto;
+    border:2px solid grey;
+    .mynav {
+        position: relative;
+   
+        margin: 0 auto;
+        width: 98%;
+        background: orange !important;
+      
+        p {
+          position: relative;
+          top: 5px;
+          text-indent: 10px;
+          font-weight: 700;
+          color: white;
+        }
+      
+        .mybtn {
+          position: relative;
+          right: 20px;
+        }
+      
+       
+      
+      }
+      table{
+          position: relative;
+          margin:0 auto;
+        
+         text-align: center;
+         table,th,td,td{
+         
+            border:1px solid black;
+          
+        }
+       
+      
+      
+      }
+      .mydialog{
+        width: 500px;
+        border:1px solid red;
+        background-color: bisque;
+        .btnedit{
+            background-color: blue;
+        }
+        .btnrem{
+            background-color: red;
+            position: relative;
+            left:20px;
+        }
+
+      }
+    
+}
+.popup{
+  position: relative;
+  margin: 0 auto;
+width:500px;
+height:auto;
+border:1px solid red;
+color: white;
+background-color: green;
+label {
+  color: white;
+
+}
+.container{
+  position: relative;
+  right:10px;
+  display:flex;
+  justify-content: space-between;
+}
+.close{
+  position: relative;
+  right: 20px;
+  border:none;
+}
+.btncontainer{
+position: relative;
+
+left:360px;
+}
+
+}
+

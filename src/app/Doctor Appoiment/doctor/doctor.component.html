@@ -1,0 +1,48 @@
+<p>doctor works!</p>
+<h1 style="text-align: center">All the appoimeiments</h1>
+<ng-container>
+  <p style="text-align: center; color: purple; font-size: 40px">
+    {{
+      userAppoiments.length == 0
+        ? "No appointments"
+        : userAppoiments.length > 0 && myselect
+        ? "Appointment for " + myselect
+        : "Check your appointment"
+    }}
+  </p>
+</ng-container>
+
+<div class="select">
+  <label for="delete" class="del">Delete a appoiment</label><br />
+  <select (change)="select($event)">
+    <option value="">Select</option>
+    <option [value]="u.name" *ngFor="let u of userAppoiments">
+      {{ u.name }}
+    </option>
+  </select>
+  <div class="container" *ngIf="userAppoiments.length === 0">
+    <button (click)="back()" class="btnselback">Back to Homepage</button>
+  </div>
+</div>
+
+<ng-container *ngIf="currentAppoitment.length > 0">
+  <div class="container">
+    <div class="box" *ngFor="let u of currentAppoitment">
+      <p>
+        <b>Detailes for : {{ u.name |uppercase}}</b>
+      </p>
+      <p>Appoitment scheduled for :{{ u.time }}</p>
+      <p>Date :{{ u.date }}</p>
+      <p>First Time:{{ u.first }}</p>
+      <p>Gender:{{ u.gender }}</p>
+      <p>Age:{{ u.age }}</p>
+      <p>Mobile nr: {{ u.mobile }}</p>
+      <p>City: {{ u.city }}</p>
+      <p>Notes for doctor: {{ u.note }}</p>
+      <button (click)="delete(u)" class="btn-btn">Delete Appoitment</button>
+      <button (click)="back()" class="btn-back">Back</button>
+    </div>
+  </div>
+</ng-container>
+
+<div class="footer"></div>

@@ -1,0 +1,40 @@
+<input type="text" placeholder="Add Notes" [(ngModel)]="note.mynote" />
+<button (click)="add()" [disabled]="disbtn  || !note.mynote">Add Note</button>
+<button (click)="cancel()" *ngIf="note.id !==0" >Cancel</button>
+
+<ng-container *ngIf="show else data">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Note</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let n of allNotes">
+            <td>
+              {{ n.id }}
+            </td>
+      
+            <td>
+              {{ n.mynote }}
+            </td>
+            <td>
+              <button (click)="edit(n)">Edit</button>
+              <button (click)="delete(n)">delete</button>
+              <button (click)="update()" *ngIf="note.id !==0  && n.id=== this.newnote.id" class="button">Update :{{n.id}}</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</ng-container>
+
+<ng-template #data>
+    <h1>No Notes</h1>
+    
+</ng-template>
+
+
+
+

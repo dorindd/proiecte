@@ -1,0 +1,90 @@
+<p>appoiment works!</p>
+<ng-container *ngIf="show else data">
+  <div class="container">
+    <div class="box">
+      <h1>New Appoiment</h1>
+      <form class="form">
+        <div class="details">
+          <label for="name">Name</label>
+          <input type="text" placeholder="Add name" name="name" [(ngModel)]="name"/>
+          <label for="mobile">Mobile</label>
+          <input type="text" placeholder="Add mobile" name="mobile" [(ngModel)]="mobile"/>
+        </div>
+        <div class="details">
+          <label for="city">City</label>
+          <input type="text" placeholder="Add city" name="city" [(ngModel)]="city"/>
+          <label for="age">Age</label>
+          <input type="text" placeholder="Add age" name="age" [(ngModel)]="age"/>
+        </div>
+        <div class="details">
+          <label for="firsttime">FirstTime</label>
+          <select name="firsttime" [(ngModel)]="first">
+            <option value="" selected>Select</option>n
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <label>Gender</label>
+          <div class="gender">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male"[(ngModel)]="gender" />
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female"[(ngModel)]="gender" />
+          </div>
+        </div>
+        <div class="details">
+          <label for="dob">DOB</label>
+          <input type="date" name="dob" [(ngModel)]="date"/>
+          <label for="time">Appoitment Time</label>
+          <input type="time" name="time" [(ngModel)]="time"/>
+        </div>
+        <label for="note" class="notelab">Enter Note</label>
+        <textarea name="note" rows="4" cols="40"[(ngModel)]="note"></textarea><br />
+        <button (click)="book()" class="btnbtn mybtn" [disabled]="!name || !mobile || !city || !age || !first || !gender || !time || !note"
+        [ngClass]="{active:name && mobile && city && age &&first && gender && time && note && date}">Book Appoitment</button>
+      </form>
+    </div>
+    <div class="box">
+      <h1>Appoiment</h1>
+      <h2>Booking App</h2>
+      <hr class="line" />
+      <div class="txt">
+        <p>
+          All the doctors at Medical Care are here to help you in the saftey of
+          your home.
+        </p>
+      </div>
+  
+      <img
+        src="https://t3.ftcdn.net/jpg/02/60/79/68/360_F_260796882_QyjDubhDDk0RZXV9z7XBEw9AKnWCizXy.jpg"
+        alt="poza"
+      />
+      <button routerLink="/list" class="btnbtn">Check Your Appoitment</button>
+      
+    </div>
+    <div class="box">
+      <h1>Medical appoitment</h1>
+      <p style="text-align: center;color: red;"><b>-Doctors Only-</b></p>
+      <img src="https://m.media-amazon.com/images/I/61KLBAufSRL._AC_UF1000,1000_QL80_.jpg" alt="poza" class="docimg">
+      <button class="btndoc" (click)="login()">Log in </button>
+      
+  </div>
+</div>
+</ng-container>
+<ng-template #data>
+  <div class="mymodal">
+ 
+      <input type="text" name="myname"  placeholder="Add name" [(ngModel)]="myname">
+      <input type="password" name="password"  placeholder="Add password" [(ngModel)]="password">
+      <button class="btnlog"(click)="log()">Log In</button>
+     
+   
+    
+  </div>
+
+</ng-template>
+<div class="footer">
+  <p class="txt">Doctors registers </p>
+  <button class="btnreg" routerLink="/register">Register</button>
+</div>
+
+

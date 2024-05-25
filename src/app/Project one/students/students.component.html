@@ -1,0 +1,103 @@
+<p>students works!</p>
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <h4>Student</h4>
+</nav>
+<div class="mycont">
+  <nav class="navbar bg-primary mynav" data-bs-theme="dark">
+    <p>Student details</p>
+    <button type="button" class="btn btn-primary mybtn" (click)="add()">
+      Add Student
+    </button>
+  </nav>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>
+          <input
+            type="checkbox"
+            [(ngModel)]="selectall"
+            (ngModelChange)="check()"
+          />
+        </th>
+        <th>Full Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Adress</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td><input type="checkbox" [(ngModel)]="s.checked" /></td>
+        <td>{{ s.fullName }}</td>
+        <td>{{ s.mobile }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.adress }}</td>
+        <td>
+          <button
+            type="button"
+            class="btnedit"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            (click)="edit(s)"
+          >
+            Edit
+          </button>
+          <button type="button" class="btnrem" (click)="remove(s)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="popup" *ngIf="show">
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <p>Add Student</p>
+    <button (click)="close()" class="close">X</button>
+  </nav>
+  <div>
+    <label for="name">Full Name</label><br />
+    <input
+      type="text"
+      name="name"
+      size="40"
+      [(ngModel)]="student.fullName"
+    /><br />
+    <div class="container">
+      <div class="box">
+        <label for="mobile">Mobile</label><br />
+        <input type="text" name="mobile" [(ngModel)]="student.mobile" />
+      </div>
+      <div class="box">
+        <label for="email">Email</label><br />
+        <input type="email" name="email" [(ngModel)]="student.email" />
+      </div>
+    </div>
+    <label for="adress">Adress</label><br />
+    <textarea name="adresss" [(ngModel)]="student.adress"></textarea>
+  </div>
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="btncontainer">
+      <button type="button" class="btn btn-secondary" (click)="close()">
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="save()"
+        *ngIf="student.id == 0"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="update()"
+        *ngIf="student.id != 0"
+      >
+        Update user
+      </button>
+    </div>
+  </nav>
+</div>
