@@ -199,13 +199,13 @@ export class TableComponent implements OnInit {
       this.currentPage++;
       this.visibleData();
     }
-    
   }
 
   pageNumber() {
     let totalPages = Math.ceil(this.filterSuplayers.length / this.pageSize);
 
     let pageNumArray = new Array(totalPages);
+    console.log(pageNumArray);
     return pageNumArray;
   }
 

@@ -11,6 +11,8 @@ import { AppoimentComponent } from './Doctor Appoiment/appoiment/appoiment.compo
 import { OnlydocComponent } from './Doctor Appoiment/onlydoc/onlydoc.component';
 import { RegisterComponent } from './Doctor Appoiment/register/register.component';
 import { TableComponent } from './TableWithPagination/table/table.component';
+import { UsersearchComponent } from './Search with message/usersearch/usersearch.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,11 +24,12 @@ import { TableComponent } from './TableWithPagination/table/table.component';
     AppoimentComponent,
     OnlydocComponent,
     RegisterComponent,
-    TableComponent
+    TableComponent,
+    UsersearchComponent
 
 
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

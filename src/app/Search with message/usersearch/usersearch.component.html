@@ -1,0 +1,68 @@
+<p>usersearch works!</p>
+
+<div class="search">
+  <input
+    type="text"
+    placeholder="Search name ...."
+    #data
+    (keyup)="search(data.value)"
+  />
+</div>
+
+<h1 *ngIf="display">Your search it don't match try again</h1>
+ 
+
+
+<div class="container">
+    
+  <ng-container *ngIf="show; else mydata">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of allUsers">
+          <td>{{ u.id }}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.username }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.website }}</td>
+          <td><button class="btn" (click)="delete(u)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #mydata>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of userFilter">
+          <td>{{ u.id }}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.username }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.website }}</td>
+          <td><button class="btn" (click)="delete(u)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>
