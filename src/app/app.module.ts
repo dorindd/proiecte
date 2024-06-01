@@ -13,6 +13,7 @@ import { RegisterComponent } from './Doctor Appoiment/register/register.componen
 import { TableComponent } from './TableWithPagination/table/table.component';
 import { UsersearchComponent } from './Search with message/usersearch/usersearch.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsearcgComponent } from './NEW way for sercing/newsearcg/newsearcg.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     OnlydocComponent,
     RegisterComponent,
     TableComponent,
-    UsersearchComponent
+    UsersearchComponent,
+    NewsearcgComponent
 
 
   ],

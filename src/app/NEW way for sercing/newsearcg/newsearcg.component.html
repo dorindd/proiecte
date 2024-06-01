@@ -1,0 +1,41 @@
+<p>newsearcg works!</p>
+
+<div class="search">
+  <input
+    type="text"
+    placeholder="Search name ...."
+    #data
+    (keyup)="search(data.value)"
+  />
+</div>
+
+<div class="container">
+  <ng-container *ngIf="userFilter.length >0">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of userFilter">
+          <td>{{ u.id }}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.username }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.website }}</td>
+          <td><button class="btn" (click)="delete(u)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-container *ngIf="userFilter.length === 0">
+    <h1>No search results found</h1>
+     </ng-container>
+</div>

@@ -1,0 +1,67 @@
+.container {
+    position: relative;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+  
+    table,
+    tr,
+    th,
+    td {
+      border-collapse: collapse;
+      width: 900px;
+      height: 50px;
+      border: 1px solid blue;
+    }
+  
+    thead tr th {
+      text-align: center;
+      background-color: green;
+      border: 2px solid blue;
+      color: white;
+      text-transform: uppercase;
+    }
+  
+    tbody tr td {
+      text-align: center;
+      border: 3px double red;
+      background-color: purple;
+      color: white;
+    }
+    .btn {
+      color: aquamarine;
+      // border: 1px solid white;
+      // background-color: black;
+      // padding: 3px;
+      // text-transform: uppercase;
+      // border-radius: 5px;
+      // &:hover {
+      //   background-color: aquamarine;
+      //   color: black;
+      // }
+    }
+  }
+  .search,input {
+      position: relative;
+      top:30px;
+      display: block;
+      margin:0 auto;
+      input[type='text']{
+          border:2px solid blue;
+          border-radius: 3px;
+          width: 400px;
+          padding: 5px;
+         
+  
+  }
+  input::placeholder{
+      color:red;
+  }
+  
+  }
+  h1{ 
+      text-align:center;
+      font-size: 2em;
+      font-weight: bold;
+      margin: 20px 0;
+  }
