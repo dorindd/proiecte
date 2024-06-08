@@ -1,0 +1,34 @@
+<p>reusablechild works!</p>
+<ng-template #mydata>
+    <h1>No users</h1>
+</ng-template>
+
+<ng-container *ngIf="tableUsers.length !== 0;else mydata"> 
+    <table class="table table-border" style="width:90%;margin:0 auto;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th *ngFor="let col of tableColumns">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of tableUsers">
+            <td>{{ user.id }}</td>
+            <td *ngFor="let col of tableColumns">
+              <ng-container *ngIf="col === 'Actions' && showButtons">
+                <button class="btn btn-sm btn-success" (click)="edit(user)">
+                  Edit
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="delete(user)">
+                  Delete
+                </button>
+              </ng-container>
+              <ng-container *ngIf="col !== 'Actions'">
+                {{ user[col] }}
+              </ng-container>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</ng-container>
+

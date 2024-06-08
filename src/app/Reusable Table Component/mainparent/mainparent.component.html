@@ -1,0 +1,63 @@
+ <p>mainparent works!</p>
+<div class="row">
+  <div class="col-12">
+    <input
+      type="text"
+      placeholder="Search for..."
+      #data
+      (keyup)="search(data.value)"
+    />
+    <button class="btn btn-primary" (click)="showBtn()">
+      {{ show === false ? "Active Buttons" : "Inactive Buttons" }}
+    </button>
+  </div>
+</div>
+<ng-container  *ngIf="display && !filterData">
+  <div class="row">
+    <div class="col-12">
+      <h1>No data is match</h1>
+    </div>
+  </div>
+</ng-container>
+
+
+<app-reusablechild
+  [tableUsers]="filterData"
+  [tableColumns]="dataArray"
+  [showButtons]="show"
+  (editData)="passEdit($event)"
+  (deleteData)="passDelete($event)"
+></app-reusablechild>
+
+<ng-container *ngIf="visible ;else mydata">
+    <div class="row">
+        <div class="col-sm-12">
+          <table class="table table-border mytable" style="width:90%;margin:0 auto;">
+            <thead>
+              <tr *ngIf="singledataArray.length === 0">
+             
+                <th *ngFor="let col of singledataArray">{{ col }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ sigleFilterUser?.id }}</td>
+                <td>{{ sigleFilterUser?.name }}</td>
+                <td>{{ sigleFilterUser?.username }}</td>
+                <td>{{ sigleFilterUser?.email }}</td>
+                <td>{{ sigleFilterUser?.phone }}</td>
+                <td>{{ sigleFilterUser?.website }}</td>
+                <td>{{ sigleFilterUser?.date }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+</ng-container>
+
+<ng-template #mydata>
+
+</ng-template>
+
+

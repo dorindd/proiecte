@@ -14,6 +14,8 @@ import { TableComponent } from './TableWithPagination/table/table.component';
 import { UsersearchComponent } from './Search with message/usersearch/usersearch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsearcgComponent } from './NEW way for sercing/newsearcg/newsearcg.component';
+import { MainparentComponent } from './Reusable Table Component/mainparent/mainparent.component';
+import { ReusablechildComponent } from './Reusable Table Component/reusablechild/reusablechild.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { NewsearcgComponent } from './NEW way for sercing/newsearcg/newsearcg.co
     RegisterComponent,
     TableComponent,
     UsersearchComponent,
-    NewsearcgComponent
+    NewsearcgComponent,
+    MainparentComponent,
+    ReusablechildComponent
 
 
   ],
