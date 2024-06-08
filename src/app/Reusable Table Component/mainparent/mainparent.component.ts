@@ -25,6 +25,8 @@ export class MainparentComponent implements OnInit {
   sigleFilterUser: any = {};
   showSingleUser = false;
   visible!:boolean
+
+  showMsg=true
   constructor(private service: ReusableshareService) {}
 
   ngOnInit(): void {
@@ -92,6 +94,10 @@ export class MainparentComponent implements OnInit {
       this.sigleFilterUser = {};
       this.visible=false
    
+    }
+
+    if(this.filterData.length === 0){
+   this.showMsg=false
     }
     
   }

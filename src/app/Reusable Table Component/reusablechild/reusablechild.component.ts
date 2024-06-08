@@ -14,6 +14,7 @@ export class ReusablechildComponent implements OnInit {
 @Output() editData=new EventEmitter()
 @Output() deleteData=new EventEmitter()
 showdata=true
+@Input() showMsg=true
 
   constructor() { }
 

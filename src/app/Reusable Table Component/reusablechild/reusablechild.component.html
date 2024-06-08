@@ -1,10 +1,8 @@
 <p>reusablechild works!</p>
-<ng-template #mydata>
-    <h1>No users</h1>
-</ng-template>
 
-<ng-container *ngIf="tableUsers.length !== 0;else mydata"> 
-    <table class="table table-border" style="width:90%;margin:0 auto;">
+
+<ng-container *ngIf="showMsg;else mydata"> 
+    <table class="table table-border" style="width:90%;margin:0 auto;" *ngIf="tableUsers.length !==0">
         <thead>
           <tr>
             <th>ID</th>
@@ -32,3 +30,6 @@
       </table>
 </ng-container>
 
+<ng-template #mydata>
+  <h1>No users</h1>
+</ng-template>

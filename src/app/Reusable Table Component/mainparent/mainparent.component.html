@@ -12,7 +12,7 @@
     </button>
   </div>
 </div>
-<ng-container  *ngIf="display && !filterData">
+<ng-container  *ngIf="display">
   <div class="row">
     <div class="col-12">
       <h1>No data is match</h1>
@@ -27,6 +27,7 @@
   [showButtons]="show"
   (editData)="passEdit($event)"
   (deleteData)="passDelete($event)"
+  [showMsg]="showMsg"
 ></app-reusablechild>
 
 <ng-container *ngIf="visible ;else mydata">
