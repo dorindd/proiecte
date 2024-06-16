@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsearcgComponent } from './NEW way for sercing/newsearcg/newsearcg.component';
 import { MainparentComponent } from './Reusable Table Component/mainparent/mainparent.component';
 import { ReusablechildComponent } from './Reusable Table Component/reusablechild/reusablechild.component';
+import { IntroComponent } from './Quiz/intro/intro.component';
+import { HtmlComponent } from './Quiz/html/html.component';
+
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { ReusablechildComponent } from './Reusable Table Component/reusablechild
     UsersearchComponent,
     NewsearcgComponent,
     MainparentComponent,
-    ReusablechildComponent
+    ReusablechildComponent,
+    IntroComponent,
+    HtmlComponent,
+  
 
 
   ],

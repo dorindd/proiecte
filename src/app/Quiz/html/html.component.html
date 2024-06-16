@@ -1,0 +1,129 @@
+<p>html works!</p>
+<h1>Times : {{counter}}</h1>
+
+<ng-container *ngIf="showclasstimer" class="timescore">
+  <h2>Score: {{ correctAsnawes.length }}</h2>
+  <h2>Answers:</h2>
+  <div *ngFor="let a of correctAsnawes">
+    <p
+      style="position: relative; text-align:'center';color: green; font-weight: bold"
+    >
+      {{ a.questionId }}: {{ a.userAnswer }}
+    </p>
+  </div>
+  <button  routerLink="/into" class="btn-back"> back to Quiz</button>
+  
+</ng-container>
+<section class="section">
+  <ng-container *ngIf="show; else data">
+    <div *ngFor="let u of visibleData()">
+      <h1>{{ u.text }}</h1>
+      <p>Question {{ u.id }} of 15</p>
+      <p style="color: blue; font-weight: bold">{{ u.question }}</p>
+      <div class="mycontainer">
+        <div class="chenar">
+          <input
+            type="radio"
+            name="question-{{ u.id }}"
+            id=""
+            [value]="u.answer1"
+            (change)="pick(u.answer1, u.id)"
+            [disabled]="timecheck"
+          />
+          <label for="">{{ u.answer1 }}</label>
+        </div>
+        <br />
+        <div class="chenar">
+          <input
+            type="radio"
+            name="question-{{ u.id }}"
+            id=""
+            [value]="u.answer2"
+            (change)="pick(u.answer2, u.id)"
+            [disabled]="timecheck"
+          />
+          <label for="">{{ u.answer2 }}</label>
+        </div>
+        <br />
+        <div class="chenar">
+          <input
+            type="radio"
+            name="question-{{ u.id }}"
+            id=""
+            [value]="u.answer3"
+            (change)="pick(u.answer3, u.id)"
+            [disabled]="timecheck"
+          />
+          <label for="">{{ u.answer3 }}</label>
+        </div>
+      </div>
+    </div>
+    <button class="btn-btn" (click)="next()"   [disabled]="timecheck">next</button>
+  </ng-container>
+
+<ng-template #data>
+  <div class="score">
+    <h1>Score: {{ correctAsnawes.length }}</h1>
+    <ng-container
+    *ngIf="correctAsnawes.length === 0"
+  >
+    <h1>Level: Need to study</h1>
+  </ng-container>
+    <ng-container
+      *ngIf="correctAsnawes.length >= 3 && correctAsnawes.length <=5"
+    >
+      <h1>Level: Beginner</h1>
+    </ng-container>
+    <ng-container
+      *ngIf="correctAsnawes.length >=6 && correctAsnawes.length <= 10"
+    >
+      <h1>Level :Intermediate</h1>
+    </ng-container>
+    <ng-container
+      *ngIf="correctAsnawes.length >= 11 && correctAsnawes.length <= 15"
+    >
+      <h1>Level: Intermediate +</h1>
+    </ng-container>
+    <button  routerLink="/into" class="btn-back"> back to Quiz</button>
+    <h2> Your Answers:</h2>
+    <div *ngFor="let a of correctAsnawes">
+      <p
+        style="position: relative; top: '50px'; color: green; font-weight: bold"
+      >
+        {{ a.questionId }}: {{ a.userAnswer }}
+      </p>
+    </div>
+    <ng-container *ngIf="correctAsnawes.length === 0">
+<h1>No asnswers</h1>
+    </ng-container>
+  </div>
+
+  <div *ngFor="let u of allhtml" class="total">
+    <p style="color: blue; font-weight: bold">{{u.id}}: {{ u.question }}</p>
+
+    <p
+      for=""
+      [ngStyle]="{ background: u.answer1 === u.correct ? 'green' : 'red' }"
+    >
+      {{ u.answer1 }}
+    </p>
+
+    <p
+      for=""
+      [ngStyle]="{ background: u.answer2 === u.correct ? 'green' : 'red' }"
+    >
+      {{ u.answer2 }}
+    </p>
+
+    <p
+      for=""
+      [ngStyle]="{ background: u.answer3 === u.correct ? 'green' : 'red' }"
+    >
+      {{ u.answer3 }}
+    </p>
+    
+  </div>
+  
+</ng-template>
+
+</section>
