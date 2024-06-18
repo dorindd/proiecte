@@ -1,0 +1,16 @@
+table,tr,th,td{
+    position: relative;
+  
+    margin: 0 auto;
+    border:1px solid red;
+    text-align: center;
+    border-collapse: collapse;
+}
+.pagination{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+select{
+    border:2px solid blue;
+}

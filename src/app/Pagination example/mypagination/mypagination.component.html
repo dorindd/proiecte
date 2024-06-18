@@ -1,0 +1,53 @@
+<p>mypagination works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="
+        let u of allusers
+          | paginate
+            : {
+                id: 'listing_psgination',
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: totalRecord
+              }
+      "
+    >
+      <td>{{ u.id }}</td>
+      <td>{{ u.title }}</td>
+      <td>{{ u.completed }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+<div class="pagination">
+  <select [(ngModel)]="pageSize" (change)="changePageSize()">
+    <option value="5">Select 5 from {{ totalRecord }}</option>
+    <option value="10">Select 10 from {{ totalRecord }}</option>
+    <option value="20">Select 20 from {{ totalRecord }}</option>
+    <option value="30">Select 30 from {{ totalRecord }}</option>
+    <option value="40">Select 40 from {{ totalRecord }}</option>
+    <option value="50">Select 50 from {{ totalRecord }}</option></select
+  >
+
+  <pagination-controls
+    id="listing_psgination"
+    (pageChange)="page = $event"
+    previousLabel="Previous"
+    nextLabel="Next"
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page"
+    screenReaderCurrentLabel="You're on page"
+  >
+  </pagination-controls>
+</div>

@@ -18,6 +18,8 @@ import { MainparentComponent } from './Reusable Table Component/mainparent/mainp
 import { ReusablechildComponent } from './Reusable Table Component/reusablechild/reusablechild.component';
 import { IntroComponent } from './Quiz/intro/intro.component';
 import { HtmlComponent } from './Quiz/html/html.component';
+import { MypaginationComponent } from './Pagination example/mypagination/mypagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -37,11 +39,14 @@ import { HtmlComponent } from './Quiz/html/html.component';
     ReusablechildComponent,
     IntroComponent,
     HtmlComponent,
+    MypaginationComponent,
   
 
 
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,
+    NgxPaginationModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
